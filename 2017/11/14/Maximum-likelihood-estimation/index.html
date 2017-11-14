@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CV,CPD,Point Set Registration,Clustering," />
 
 
 
@@ -79,17 +79,30 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="Abstract 极大似然估计，只是一种概率论在统计学的应用，它是参数估计的方法之一。最大似然估计提供了一种给定观察数据来评估模型参数的方法，即：“模型已定，参数未知”。简单而言，假设我们要统计全国人口的身高，首先假设这个身高服从服从正态分布，但是该分布的均值与方差未知。我们没有人力与物力去统计全国每个人的身高，但是可以通过采样，获取部分人的身高，然后通过最大似然估计来获取上述假设中的正态分布的均">
+<meta name="keywords" content="CV,CPD,Point Set Registration,Clustering">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/10/30/hello-world/index.html">
+<meta property="og:title" content="最大似然估计（Maximum-likelihood estimation）">
+<meta property="og:url" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/index.html">
 <meta property="og:site_name" content="YOUJUN&#39;s PAGE">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Abstract 极大似然估计，只是一种概率论在统计学的应用，它是参数估计的方法之一。最大似然估计提供了一种给定观察数据来评估模型参数的方法，即：“模型已定，参数未知”。简单而言，假设我们要统计全国人口的身高，首先假设这个身高服从服从正态分布，但是该分布的均值与方差未知。我们没有人力与物力去统计全国每个人的身高，但是可以通过采样，获取部分人的身高，然后通过最大似然估计来获取上述假设中的正态分布的均">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2017-10-30T10:16:28.320Z">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/1.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/2.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/3.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/4.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/5.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/6.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/7.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/8.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/9.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/10.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/11.png">
+<meta property="og:updated_time" content="2017-11-14T10:30:52.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="最大似然估计（Maximum-likelihood estimation）">
+<meta name="twitter:description" content="Abstract 极大似然估计，只是一种概率论在统计学的应用，它是参数估计的方法之一。最大似然估计提供了一种给定观察数据来评估模型参数的方法，即：“模型已定，参数未知”。简单而言，假设我们要统计全国人口的身高，首先假设这个身高服从服从正态分布，但是该分布的均值与方差未知。我们没有人力与物力去统计全国每个人的身高，但是可以通过采样，获取部分人的身高，然后通过最大似然估计来获取上述假设中的正态分布的均">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/1.png">
 
 
 
@@ -119,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/30/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/"/>
 
 
 
 
 
-  <title>Hello World | YOUJUN's PAGE</title>
+  <title>最大似然估计（Maximum-likelihood estimation） | YOUJUN's PAGE</title>
   
 
 
@@ -262,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/14/Maximum-likelihood-estimation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhao Youjun">
@@ -279,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">最大似然估计（Maximum-likelihood estimation）</h1>
         
 
         <div class="post-meta">
@@ -291,8 +304,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-10-30T18:16:28+08:00">
-                2017-10-30
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-11-14T17:45:46+08:00">
+                2017-11-14
               </time>
             
 
@@ -329,15 +342,22 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><blockquote>
+<p>极大似然估计，只是一种概率论在统计学的应用，它是<em>参数估计的方法</em>之一。最大似然估计提供了一种给定观察数据来评估模型参数的方法，即：“模型已定，参数未知”。简单而言，假设我们要统计全国人口的身高，首先假设这个身高服从服从正态分布，但是该分布的均值与方差未知。我们没有人力与物力去统计全国每个人的身高，但是可以通过采样，获取部分人的身高，然后通过最大似然估计来获取上述假设中的正态分布的均值与方差。</p>
+</blockquote>
+<h2 id="Mathod"><a href="#Mathod" class="headerlink" title="Mathod"></a>Mathod</h2><p>最大似然估计中采样需满足一个很重要的假设，就是所有的采样都是独立同分布的。下面我们具体描述一下最大似然估计：</p>
+<p>首先，假设<img src="1.png" alt="1">为独立同分布的采样，θ为模型参数,f为我们所使用的模型，遵循我们上述的独立同分布假设。参数为θ的模型f产生上述采样可表示为:<br><img src="2.png" alt="2"></p>
+<p>回到上面的“模型已定，参数未知”的说法，此时，我们已知的为 <img src="3.png" alt="3">，未知为θ，故似然定义为:</p>
+<p><img src="4.png" alt="4"><br>　　在实际应用中常用的是两边取对数，得到公式如下：<br><img src="5.png" alt="5"><br>　　其中<img src="6.png" alt="6">称为对数似然，而<img src="7.png" alt="7"> 称为平均对数似然。而我们平时所称的最大似然为最大的对数平均似然，即：<br><img src="8.png" alt="8"> </p>
+<h2 id="Example："><a href="#Example：" class="headerlink" title="Example："></a>Example：</h2><p>假如有一个罐子，里面有黑白两种颜色的球，数目多少不知，两种颜色的比例也不知。我们想知道罐中白球和黑球的比例，但我们不能把罐中的球全部拿出来数。现在我们可以每次任意从已经摇匀的罐中拿一个球出来，记录球的颜色，然后把拿出来的球再放回罐中。这个过程可以重复，我们可以用记录的球的颜色来估计罐中黑白球的比例。假如在前面的一百次重复记录中，有七十次是白球，请问罐中白球所占的比例最有可能是多少？很多人马上就有答案了：70%。而其后的理论支撑是什么呢？</p>
+<p>我们假设罐中白球的比例是p，那么黑球的比例就是1-p。因为每抽一个球出来，在记录颜色之后，我们把抽出的球放回了罐中并摇匀，所以每次抽出来的球的颜 色服从同一独立分布。这里我们把一次抽出来球的颜色称为一次抽样。题目中在一百次抽样中，七十次是白球的概率是P(Data | M)，这里Data是所有的数据，M是所给出的模型，表示每次抽出来的球是白色的概率为p。如果第一抽样的结果记为x1，第二抽样的结果记为x2… ,那么Data = (x1,x2,…,x100)。这样:<br>　　　　P(Data | M)<br>　　　　　= P(x1,x2,…,x100|M)<br>　　　　　= P(x1|M)P(x2|M)…P(x100|M)<br>　　　　　= p^70(1-p)^30.<br>那么p在取什么值的时候，P(Data|M)的值最大呢？<br>将p^70(1-p)^30对p求导，并其等于零。<br>　　　　70p^69(1-p)^30-p^70*30(1-p)^29=0。<br>　　　　解方程可以得到p=0.7。<br>在边界点p=0,1，P(Data|M)=0。所以当p=0.7时，P(Data|M)的值最大。这和我们常识中按抽样中的比例来计算的结果是一样的。</p>
+<p>假如我们有一组连续变量的采样值（x1,x2,…,xn），我们知道这组数据服从正态分布，标准差已知。请问这个正态分布的期望值为多少时，产生这个已有数据的概率最大？<br>　　　　P(Data | M) = ？<br>根据公式<br> 　　 <img src="9.png" alt="9"><br>　　可得:<br><img src="10.png" alt="10"></p>
+<font color="#FF0000"> 這個公式詳見 “概率密度函數” </font>
+
+<p>　　对μ求导可得<br><img src="11.png" alt="11"><br> ,则最大似然估计的结果为<br> <font color="#FF0000"> μ=(x1+x2+…+xn)/n？</font></p>
+<pre><code>由上可知最大似然估计的一般求解过程：
+</code></pre><p>　　（1） 写出似然函数；<br>　　（2） 对似然函数取对数，并整理；<br>　　（3） 求导数 ；<br>　　（4） 解似然方程</p>
+<p>注意：最大似然估计只考虑某个模型能产生某个给定观察序列的概率。而未考虑该模型本身的概率。这点与贝叶斯估计区别。贝叶斯估计方法将在以后的博文中描述</p>
 
       
     </div>
@@ -353,6 +373,18 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/CV/" rel="tag"># CV</a>
+          
+            <a href="/tags/CPD/" rel="tag"># CPD</a>
+          
+            <a href="/tags/Point-Set-Registration/" rel="tag"># Point Set Registration</a>
+          
+            <a href="/tags/Clustering/" rel="tag"># Clustering</a>
+          
+        </div>
+      
 
       
       
@@ -362,15 +394,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/11/10/CPD/" rel="next" title="Point Set Registration Coherent Point Drift">
+                <i class="fa fa-chevron-left"></i> Point Set Registration Coherent Point Drift
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/31/title-1/" rel="prev" title="ALL BEGAN">
-                ALL BEGAN <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -508,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mathod"><span class="nav-number">2.</span> <span class="nav-text">Mathod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example："><span class="nav-number">3.</span> <span class="nav-text">Example：</span></a></li></ol></div>
             
 
           </div>
