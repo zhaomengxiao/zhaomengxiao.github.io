@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="初入C++，實在感受到了精通它的困難。用慣了方便好用的Matlab的plot指令，自然在苦於如何用C++畫些簡單的圖形來幫助自己驗證代碼的時候，想到了可不可以調用Matlab來畫圖。
+
+其實是可以的，配置還非常方便，這裡我介紹一種調用MATLAB的方法：
+Quick Start在C++中調用MATL">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Zhao Youjun">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="c++ 調用MATLAB&lt;engine&gt;"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="YOUJUN&#39;s PAGE"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>c++ 調用MATLAB&lt;engine&gt; - YOUJUN&#39;s PAGE</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-connectdevelop" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/03/22/c-調用MATLAB-engine/">
+                c++ 調用MATLAB<engine>
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-03-22</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <blockquote>
+<p>初入C++，實在感受到了精通它的困難。用慣了方便好用的Matlab的plot指令，自然在苦於如何用C++畫些簡單的圖形來幫助自己驗證代碼的時候，想到了可不可以調用Matlab來畫圖。</p>
+</blockquote>
+<p>其實是可以的，配置還非常方便，這裡我介紹一種調用MATLAB<engine>的方法：</engine></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>在C++中調用MATLAB<engine>，你會需要</engine></p>
+<p><font color="#FF0000">头文件</font>，只需engine.h即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">engine.h</span><br></pre></td></tr></table></figure></p>
+<p><font color="#FF0000">lib文件</font>，lib文件需要这三个：libmx.lib/libmat.lib/libeng.lib。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">libmx.lib</span><br><span class="line">libmat.lib</span><br><span class="line">libeng.lib</span><br></pre></td></tr></table></figure>
+<h2 id="More-info"><a href="#More-info" class="headerlink" title="More info"></a>More info</h2><blockquote>
+<p>引擎相应的部分函数如下：<br>engOpen：启动Matlab引擎<br>engClose：关闭Matlab引擎<br>engGetArray：从Matlab引擎中获得一个Matlab矩阵，用于数据交换<br>engPutArray：从应用程序向Matlab引擎发送一个Matlab矩阵，用于数据交换<br>engEvalString：执行一个Matlab命令<br>engOutputBuffer：创建一个用于存储Matlab文本输出的字符缓冲区</p>
+</blockquote>
+<h2 id="Example-Code"><a href="#Example-Code" class="headerlink" title="Example Code"></a>Example Code</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include "stdafx.h"</span></span><br><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;math.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string&gt;</span></span><br><span class="line">//<span class="comment">#include &lt;engine.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#include "engine.h"  </span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">void main()</span><br><span class="line">&#123;</span><br><span class="line">	const int N = 50;</span><br><span class="line">	double x[N], y[N];</span><br><span class="line">	int j = 1;</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i&lt;N; i++) //计算数组x和y  </span><br><span class="line">	&#123;</span><br><span class="line">		x[i] = (i + 1);</span><br><span class="line">		y[i] = sin(x[i]) + j * <span class="built_in">log</span>(x[i]); //产生－之间的随机数赋给xx[i];  </span><br><span class="line">		j *= -1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Engine *ep = engOpen(<span class="string">""</span>); //定义Matlab引擎指针。初始化  </span><br><span class="line">	//ep=engOpen(<span class="string">""</span>);  </span><br><span class="line">	<span class="keyword">if</span> (!(ep)) //测试是否启动Matlab引擎成功。  </span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"Can't start Matlab engine!"</span> &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">exit</span>(1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//定义mxArray，1行，N列的实数数组。然后将计算结果复制到创建的mx对象中，进入matlab engine计算。  </span><br><span class="line">	mxArray *xx = mxCreateDoubleMatrix(1, N, mxREAL);</span><br><span class="line">	mxArray *yy = mxCreateDoubleMatrix(1, N, mxREAL);</span><br><span class="line"></span><br><span class="line">	//memcpy，从源src所指的内存地址的起始位置开始拷贝n个字节到目标dest所指的内存地址的起始位置中。数组赋值方法。  </span><br><span class="line">	//mxGetPr返回数组指针：第一个元素指针  </span><br><span class="line">	memcpy(mxGetPr(xx), x, N*sizeof(double)); //将数组x复制到mxarray数组xx中。  </span><br><span class="line">	memcpy(mxGetPr(yy), y, N*sizeof(double)); //将数组x复制到mxarray数组yy中。  </span><br><span class="line"></span><br><span class="line">	engPutVariable(ep, <span class="string">"xx"</span>, xx); //将mxArray数组xx写入到Matlab工作空间，命名为xx。  </span><br><span class="line">	engPutVariable(ep, <span class="string">"yy"</span>, yy); //将mxArray数组yy写入到Matlab工作空间，命名为yy。  </span><br><span class="line"></span><br><span class="line">	//向Matlab引擎发送画图命令。plot为Matlab的画图函数，参见Matlab相关文档。  </span><br><span class="line">	engEvalString(ep, <span class="string">"plot(xx, yy); "</span>);</span><br><span class="line"></span><br><span class="line">	mxDestroyArray(xx); //销毁mxArray数组xx和yy。  </span><br><span class="line">	mxDestroyArray(yy);</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">"Press any key to exit!"</span> &lt;&lt; endl;</span><br><span class="line">	cin.get();</span><br><span class="line">	engClose(ep); //关闭Matlab引擎。  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/tips/">#tips</a> <a href="/tags/MATLAB/">#MATLAB</a> <a href="/tags/C/">#C++</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/21/Eigen简介/">Untitled</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/21/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/17/test_postbyMacbook/">VS 中悬浮鼠标显示函数的注解及参数说明的方法</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/17/VS 中悬浮鼠标显示函数的注解及参数说明的方法/">VS 中悬浮鼠标显示函数的注解及参数说明的方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/paper/">paper</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/blog/">blog</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Code-Skill/">Code Skill</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/zhaomengxiao">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/profile.php?id=100006290353213">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/zhaomengxiao/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:zhaoyoujun324@163.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

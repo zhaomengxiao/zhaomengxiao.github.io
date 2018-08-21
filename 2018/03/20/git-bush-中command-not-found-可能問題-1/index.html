@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="在我許久沒有更新自己的page后的某個午後，閒來無聊想發點東西當做筆記和積累，但是卻發現按之前的操作，在git bush 中輸入了命令后卻提示一個錯誤。按照字面上的翻译就是:找不到所使用的命令。我猜想是&amp;lt;fontcolor=”#FF0000”&amp;gt;由於在錯誤的路徑輸入了命令，我因為許久沒有使">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Zhao Youjun">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="git-bush-中command-not-found-可能問題"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="YOUJUN&#39;s PAGE"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>git-bush-中command-not-found-可能問題 - YOUJUN&#39;s PAGE</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-connectdevelop" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/03/20/git-bush-中command-not-found-可能問題-1/">
+                git-bush-中command-not-found-可能問題
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-03-20</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <blockquote>
+<p>在我許久沒有更新自己的page后的某個午後，閒來無聊想發點東西當做筆記和積累，但是卻發現按之前的操作，在git bush 中輸入了命令后卻提示一個錯誤。<br><img src="cmdnotfound.png" alt="cmdnotfound"><br>按照字面上的翻译就是:找不到所使用的命令。我猜想是&lt;fontcolor=”#FF0000”&gt;由於在錯誤的路徑輸入了命令，我因為許久沒有使用忘記了hexo所在路徑。但是在先查看各种工具是否都安装好的過程中：<font color="#FF0000"> 在命令行中输入node -v 然后再检查npm -v</font>，發現均提示相同錯誤，我想這不是單純錯誤路徑導致的。<br>-</p>
+</blockquote>
+<blockquote>
+<p>在嘗試許久后查閱各種網站后，我意識到問題在於我的<font color="#FF0000">系統環境變量</font>！也許是之前在配置opencv openNI<br>時誤刪到，或者在安裝node_js和hexo初期就沒有配置正確!<br>-</p>
+</blockquote>
+<blockquote>
+<p>要讓git bash 能找到命令的正確路徑，就必須在</p>
+</blockquote>
+<p><font color="#FF0000">我的電腦右鍵-屬性-高級系統設置-環境變量-PATH</font>中添加(以本人的路徑舉例)</p>
+<pre><code class="bash">E:\Node_js
+C:\Users\yj\zhaomengxiao.github.io\node_modules\hexo\bin
+C:\Users\yj\zhaomengxiao.github.io\node_modules\.bin
+</code></pre>
+<p>%這可能不需要，多加不會有事^_^<br>-</p>
+<blockquote>
+<p>配置完成后記得<font color="#FF0000">重啟電腦</font> ，系統環境變量才會生效！<br>然後再在git中輸入命令，你會發現可以顯示版本號了！</p>
+</blockquote>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/blog/">#blog</a> <a href="/tags/git/">#git</a> <a href="/tags/hexo/">#hexo</a> <a href="/tags/Annoying-little-problem/">#Annoying little problem</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/21/Eigen简介/">Untitled</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/21/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/17/test_postbyMacbook/">VS 中悬浮鼠标显示函数的注解及参数说明的方法</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/17/VS 中悬浮鼠标显示函数的注解及参数说明的方法/">VS 中悬浮鼠标显示函数的注解及参数说明的方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/paper/">paper</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/blog/">blog</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Code-Skill/">Code Skill</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/zhaomengxiao">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/profile.php?id=100006290353213">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/zhaomengxiao/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:zhaoyoujun324@163.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

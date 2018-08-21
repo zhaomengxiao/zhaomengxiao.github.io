@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="了解符号文件和Visual Studio的符号设置
+符号&amp;lt;fontcolor=”#FF0000”&amp;gt; symbol是调试和其他诊断工具的基本要求。幸运的是，在大多数情况下，当您在Visual Studio中构建和启动应用程序时，您不必为代码考虑符号。然而，在某些时候，您可能需要更改符号加载">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Zhao Youjun">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Understanding symbol files and Visual Studio’s symbol settings"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="YOUJUN&#39;s PAGE"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Understanding symbol files and Visual Studio’s symbol settings - YOUJUN&#39;s PAGE</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-connectdevelop" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/02/21/Understanding symbol files/">
+                Understanding symbol files and Visual Studio’s symbol settings
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-02-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/blog/">blog</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>了解符号文件和Visual Studio的符号设置</p>
+<p>符号&lt;fontcolor=”#FF0000”&gt; symbol是调试和其他诊断工具的基本要求。幸运的是，在大多数情况下，当您在Visual Studio中构建和启动应用程序时，您不必为代码考虑符号。然而，在某些时候，您可能需要更改符号加载方式，调试器查找它们的位置，或者需要为第三方组件（例如Windows或.NET库）加载符号的可能性。此外，因为符号对于调试非常重要，所以我们会继续对体验进行调整，以便理解Visual Studio行为方式的来龙去脉可以为您节省数小时的沮丧。<br>在这篇博客文章中，我将引导您了解符号是什么以及如何配置Visual Studio的符号设置（由调试器之外的其他诊断工具使用，例如性能工具和IntelliTrace），调试时可用的各种旋钮以及如何在Visual Studio无法找到您需要的符号文件时解决问题。</p>
+<p>#符号基础知识<br>在深入研究符号文件的细节之前，重要的是简要回顾一下符号是什么以及它们为什么很重要：</p>
+<h2 id="什么是符号文件？"><a href="#什么是符号文件？" class="headerlink" title="什么是符号文件？"></a>什么是符号文件？</h2><p>对于Microsoft编译器，这些是作为构建的一部分生成的.pdb文件。</p>
+<h2 id="什么是符号（-pdb）文件？"><a href="#什么是符号（-pdb）文件？" class="headerlink" title="什么是符号（.pdb）文件？"></a>什么是符号（.pdb）文件？</h2><p>符号文件的确切内容因语言和语言的不同而不同，并且基于您的编译器设置，但在很高的层次上，它们是编译器如何将源代码转换为处理器执行的机器代码的记录。</p>
+<h2 id="为什么我需要符号？"><a href="#为什么我需要符号？" class="headerlink" title="为什么我需要符号？"></a>为什么我需要符号？</h2><p>如果没有符号，工具无法将应用程序中执行的指令与原始源代码关联起来。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/經典翻譯/">#經典翻譯</a> <a href="/tags/Microsoft/">#Microsoft</a> <a href="/tags/symbol/">#symbol</a> <a href="/tags/visual-studio/">#visual studio</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/21/Eigen简介/">Untitled</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/21/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/17/test_postbyMacbook/">VS 中悬浮鼠标显示函数的注解及参数说明的方法</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/17/VS 中悬浮鼠标显示函数的注解及参数说明的方法/">VS 中悬浮鼠标显示函数的注解及参数说明的方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/paper/">paper</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/blog/">blog</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Code-Skill/">Code Skill</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/zhaomengxiao">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/profile.php?id=100006290353213">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/zhaomengxiao/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:zhaoyoujun324@163.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="本文主要介紹開發遊戲的第一步，如何在Win10+Visaul Studio 2017的環境下安裝配置好一個遊戲引擎-cocos2dx來開發遊戲。這裡是參考的英文原文鏈接
+
+安裝好Cocos2d-x  在安裝Cocos2D-x之前，我們需要先安裝好其他一些軟件，這裡所有的例子都是在Win10+Visa">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Zhao Youjun">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="邁出打造自己的遊戲的第一步之cocos2d-x開發環境搭建"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="YOUJUN&#39;s PAGE"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>邁出打造自己的遊戲的第一步之cocos2d-x開發環境搭建 - YOUJUN&#39;s PAGE</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-connectdevelop" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/04/12/邁出打造自己的遊戲的第一步之cocos2d-x開發環境搭建/">
+                邁出打造自己的遊戲的第一步之cocos2d-x開發環境搭建
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-04-12</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <blockquote>
+<p>本文主要介紹開發遊戲的第一步，如何在Win10+Visaul Studio 2017的環境下安裝配置好一個遊戲引擎-cocos2dx來開發遊戲。<br>這裡是參考的英文原文<a href="http://www.gamefromscratch.com/post/2014/09/29/Cocos2D-x-Tutorial-Series-Installation-Creating-a-Project-and-Hello-World.aspx" target="_blank" rel="noopener">鏈接</a></p>
+</blockquote>
+<h1 id="安裝好Cocos2d-x"><a href="#安裝好Cocos2d-x" class="headerlink" title="安裝好Cocos2d-x"></a>安裝好Cocos2d-x</h1><p>  在安裝Cocos2D-x之前，我們需要先安裝好其他一些軟件，這裡所有的例子都是在Win10+Visaul Studio 2017的環境下適用。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C++ compiler --Visaul Studio 2017</span><br><span class="line">Python 2.7x  --注意3.0+ 不適用！</span><br></pre></td></tr></table></figure>
+<p>  download <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python 2.7.x</a> here.<br>  <font color="#FF0000">安裝時記得勾選 增加系統環境變量</font>，不然要自己手動添加。沒有添加的話在命令提示符中不能<br>  使用 Python 的快捷命令，而需要寫完整路徑。</p>
+<p>  如果你需要在Android平台開發，你還需要下載 Android SDK, ANT and Android NDK ，這裡先不介紹，有時間另開新篇。</p>
+<h1 id="新建一個Cocos2d-x項目"><a href="#新建一個Cocos2d-x項目" class="headerlink" title="新建一個Cocos2d-x項目"></a>新建一個Cocos2d-x項目</h1><p>  首先打開命令提示符，cd 到 你下載的cocos2d-x的文件路徑下，輸入并執行<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py</span><br></pre></td></tr></table></figure></p>
+<p>  如果提示錯誤，找不到Python可能就是前文提到的沒有添加系統環境變量。執行后會提示你輸入Android SDK, ANT and Android NDK<br>  這些的路徑，這裡我們沒有下載就enter跳過，之後下載后再運行一次。</p>
+<p>  然後輸入<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cocos new -l cpp -p com.gamefromscratch.gamename -d C:\path\to\game\here gamename</span><br></pre></td></tr></table></figure></p>
+<p>  -d 後面的部分替換為自己的遊戲要存放的路徑。</p>
+<p>  現在我們就能在自己建立好的路徑中找到建立好的項目（hopefully!）來看看裡面有些啥：<br>  <img src="1.PNG" alt="項目目錄"></p>
+<h2 id="Getting-start"><a href="#Getting-start" class="headerlink" title="Getting start"></a>Getting start</h2><p>  點擊proj.win32文件夾裡面的.sln 文件，這回打開Visaul Studio,直接按綠色箭頭運行。<br>  如果成功的話你就會看到HelloWorld了。<br>  <img src="2.PNG" alt="helloworld"></p>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p>  现在让我们看一下最小的cocos2d-x应用程序。虽然cocos的新创建的项目创建了一个Hello World应用程序，但它是一个非常草率的起点。首先，它对应用程序来说是不必要的麻烦，它应该是一个最小的例子，它以一种只有Objective-C背景的才有看的懂的方式进行注释，它甚至使用了已經弃用的方法。</p>
+<p>  在此之前，我们将会看到一个更干净的Hello World样本。我们只需用下面提供的代码替换每个文件中的代码。不要担心，我们破解的所有功能都将在以后的教程中介绍。</p>
+<p>  我从默认实现中所做的最大的改变是只留下应用程序最基本的要求。你可能会注意到，我也用pragma once statements代替了 防衛式include聲明。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/C/">#C++</a> <a href="/tags/game-engine/">#game engine</a> <a href="/tags/cocos2dx/">#cocos2dx</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/21/Eigen简介/">Untitled</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/21/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/17/test_postbyMacbook/">VS 中悬浮鼠标显示函数的注解及参数说明的方法</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/08/17/VS 中悬浮鼠标显示函数的注解及参数说明的方法/">VS 中悬浮鼠标显示函数的注解及参数说明的方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/paper/">paper</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/blog/">blog</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Code-Skill/">Code Skill</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/zhaomengxiao">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/profile.php?id=100006290353213">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/zhaomengxiao/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:zhaoyoujun324@163.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
